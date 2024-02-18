@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header{
+    background-color: rgb(255, 249, 238);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+header h4{
+    font-size: small;
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header p{
+    color: rgb(121, 117, 117);
+    font-size: 10px;
+}
+
+/* NAV */
+nav{
+    width: 100%;
+    background-color: rgb(181, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: relative;
+}
+.logo h1{
+    font-family: "Protest Revolution", sans-serif;  
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+nav ul li{
+    margin: 0 2px;
+
+}
+nav ul li a{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+}
+nav ul li:hover a{
+    background-color: #fff;
+    color: red;
+}
+#mobile-search{
+    display: none;
+}
+.search-bar #times{
+    display: none;
+}
+nav .search-box{
+    height: 37px;
+    line-height: 35px;
+}
+nav .search-box input{
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0px 10px;
+    font-size: 20px;
+    width: 350px;
+}
+nav .search-box span{
+    color: black;
+    background-color: #fff;
+    font-size: 20px;
+    height: 100%;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+nav .search-box span:hover{
+    color: rgb(181, 255, 255);
+}
+nav .search-box span::after{
+    height: 100%;
+    width: 0%;
+    content: '';
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+nav .search-box span:hover::after{
+    width: 100%;
+}
+nav .bar{
+    position: relative;
+    /* margin: auto; */
+    display: none;
+}
+
+nav .bar span{
+    position: absolute;
+    color: black;
+    font-size: 25px;   
+}
+
+input[type="cheakbox"]{
+    -webkit-appearance: none;
+    display: none;
+}
+#check{
+    display: none;
+}
+#check2{
+    display: none;
+}
+@media screen and (max-width:1250px){
+    header h4{
+        font-size: 9px;
+    }
+    header p{
+        font-size: 8px;
+    }
+    nav{
+        display: block;
+        padding: left;
+        position: sticky;
+        top: 1px;
+    }
+    nav .logo h1{
+        padding: 15px 30px;
+        font-size: 30px;
+    }
+    nav .search-box{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    nav .search-box input{
+        width: 90%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        height: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    nav ul li{
+        text-align: center;
+        transition: 0.3s 0.1s all;
+        opacity: 0;
+    }
+    nav ul li:nth-child(1){
+        transform: translateX(-150px);
+    }
+    nav ul li:nth-child(2){
+        transform: translateX(-200px);
+    }
+    nav ul li:nth-child(3){
+        transform: translateX(-250px);
+    }
+    nav ul li:nth-child(4){
+        transform: translateX(-300px);
+    }
+    nav ul li:nth-child(5){
+        transform: translateX(-350px);
+    }
+    nav ul li a{
+        color: black;
+        font-size: 28px;
+        padding: 25px;
+        display: block;
+    }
+    nav .bar{
+        display: block;
+        position: absolute;
+        top: 38px;
+        /* right: 80px; */
+        cursor: pointer;
+    }
+    nav .bar #times{
+        display: none;
+    }
+    #check:checked ~ nav .bar #times{
+        display: block;
+    }
+    #check:checked ~ nav .bar #bars{
+        display: none;
+    }
+    #check:checked ~ nav ul{
+        visibility: visible;
+        height: 410px;
+    }
+    #check:checked ~ nav ul li:nth-child(1),
+    #check:checked ~ nav ul li:nth-child(2),
+    #check:checked ~ nav ul li:nth-child(3),
+    #check:checked ~ nav ul li:nth-child(4),
+    #check:checked ~ nav ul li:nth-child(5){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    #mobile-search{
+        display: block;
+    }
+    nav .search-bar .fa .fa-times{
+        display: none;
+    } 
+    nav .search-box{
+        display: none;
+    }
+    #check2:checked ~ nav .search-box{
+        display: block;
+    }
+    #check2:checked ~ nav #mobile-search{
+        display: none;
+    }
+    #check2:checked ~ nav .search-bar #times{
+        display: block;
+    }   
+    nav .search-bar{
+        display: block;
+        position: absolute;
+        top: 38px;
+        right: 80px;
+        cursor: pointer;
+    }
+    
+    
+    /* nav .search-bar #times{
+        position: absolute;
+        left: 300px;
+        right: 400px;
+    } */
+}
+section img{
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+}
